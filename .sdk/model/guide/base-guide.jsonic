@@ -1,0 +1,14 @@
+# Guide
+
+guide: {
+  metrics: count: entity: 1
+  metrics: count: path: 1
+  metrics: count: method: 1
+
+  entity: temporary_email: {
+    path: "/temp-mail/v1/create": {
+      op: load: method: *GET
+    }
+  }
+
+}

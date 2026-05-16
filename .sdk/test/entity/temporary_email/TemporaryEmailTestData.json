@@ -1,0 +1,30 @@
+{
+  "existing": {
+    "temporary_email": {
+      "TEMPORARY_EMAIL00": {
+        "code": "s1e",
+        "data": {},
+        "msg": "s20"
+      },
+      "TEMPORARY_EMAIL01": {
+        "code": "s3c",
+        "data": {},
+        "msg": "s3e"
+      },
+      "TEMPORARY_EMAIL02": {
+        "code": "s5a",
+        "data": {},
+        "msg": "s5c"
+      }
+    }
+  },
+  "new": {
+    "temporary_email": {
+      "temporary_email_ref01": {
+        "code": "s78",
+        "data": {},
+        "msg": "s7a"
+      }
+    }
+  }
+}

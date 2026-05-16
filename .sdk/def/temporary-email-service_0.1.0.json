@@ -1,0 +1,158 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Temporary Email Service",
+    "description": "This API allows users to generate temporary email addresses for receiving emails anonymously. It helps in protecting user privacy while signing up for online services without exposing personal email accounts.",
+    "version": "1.0.0",
+    "contact": {
+      "url": "https://hub.juheapi.com"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://hub.juheapi.com",
+      "description": "Production server"
+    }
+  ],
+  "security": [
+    {
+      "ApiKeyAuth": []
+    }
+  ],
+  "paths": {
+    "/temp-mail/v1/create": {
+      "get": {
+        "summary": "Create temporary email address",
+        "description": "Generates a new temporary email address for anonymous use. The email address can be used to receive emails without exposing personal information.",
+        "operationId": "createTempEmail",
+        "tags": [
+          "Temporary Email"
+        ],
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "434306d581f376e3aa290e7c7df966fc"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with temporary email details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string",
+                      "description": "Response code",
+                      "example": "200"
+                    },
+                    "msg": {
+                      "type": "string",
+                      "description": "Response message",
+                      "example": "Success"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "email": {
+                          "type": "string",
+                          "description": "Generated temporary email address",
+                          "example": "temp123@example.com"
+                        },
+                        "token": {
+                          "type": "string",
+                          "description": "Token for accessing the mailbox"
+                        },
+                        "expiresAt": {
+                          "type": "string",
+                          "format": "date-time",
+                          "description": "Expiration timestamp of the temporary email"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - Invalid parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Invalid or missing API key",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error or supplier request failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "code": "20203",
+                  "msg": "Supplier request failed: "
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "ApiKeyAuth": {
+        "type": "apiKey",
+        "in": "query",
+        "name": "apikey",
+        "description": "API key for authentication. Pass as a query parameter."
+      }
+    },
+    "schemas": {
+      "Error": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "description": "Error code"
+          },
+          "msg": {
+            "type": "string",
+            "description": "Error message"
+          }
+        },
+        "required": [
+          "code",
+          "msg"
+        ]
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Temporary Email",
+      "description": "Operations for managing temporary email addresses"
+    }
+  ]
+}
