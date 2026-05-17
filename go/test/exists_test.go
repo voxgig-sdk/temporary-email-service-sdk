@@ -3,7 +3,7 @@ package sdktest
 import (
 	"testing"
 
-	sdk "github.com/voxgig-sdk/temporary-email-service-sdk"
+	sdk "github.com/voxgig-sdk/temporary-email-service-sdk/go"
 )
 
 func TestExists(t *testing.T) {

@@ -1,7 +1,7 @@
 package feature
 
 import (
-	"github.com/voxgig-sdk/temporary-email-service-sdk/core"
+	"github.com/voxgig-sdk/temporary-email-service-sdk/go/core"
 )
 
 type BaseFeature struct {

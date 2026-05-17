@@ -1,6 +1,6 @@
 package utility
 
-import "github.com/voxgig-sdk/temporary-email-service-sdk/core"
+import "github.com/voxgig-sdk/temporary-email-service-sdk/go/core"
 
 func init() {
 	core.UtilityRegistrar = registerAll

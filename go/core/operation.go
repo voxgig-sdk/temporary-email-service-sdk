@@ -1,7 +1,7 @@
 package core
 
 import (
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/temporary-email-service-sdk/go/utility/struct"
 )
 
 type Operation struct {
