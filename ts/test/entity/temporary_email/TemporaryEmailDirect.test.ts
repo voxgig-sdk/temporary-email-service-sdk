@@ -78,14 +78,12 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'TEMPORARYEMAILSERVICE_TEST_TEMPORARY_EMAIL_ENTID': {},
     'TEMPORARYEMAILSERVICE_TEST_LIVE': 'FALSE',
-    'TEMPORARYEMAILSERVICE_APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.TEMPORARYEMAILSERVICE_TEST_LIVE
 
   if (live) {
     const client = new TemporaryEmailServiceSDK({
-      apikey: env.TEMPORARYEMAILSERVICE_APIKEY,
     })
 
     let idmap: any = env['TEMPORARYEMAILSERVICE_TEST_TEMPORARY_EMAIL_ENTID']
