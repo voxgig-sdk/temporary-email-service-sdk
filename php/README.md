@@ -10,7 +10,7 @@ The PHP SDK for the TemporaryEmailService API — an entity-oriented client usin
 
 ## Install
 ```bash
-composer require voxgig/temporary-email-service-sdk
+composer require voxgig-sdk/temporary-email-service
 ```
 
 

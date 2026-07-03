@@ -10,7 +10,7 @@ The Lua SDK for the TemporaryEmailService API — an entity-oriented client usin
 
 ## Install
 ```bash
-luarocks install temporary-email-service-sdk
+luarocks install voxgig-sdk-temporary-email-service
 ```
 
 If the module is not yet published, add the source directory to
