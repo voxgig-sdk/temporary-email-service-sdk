@@ -15,6 +15,9 @@ module TemporaryEmailServiceConfig
       },
       "options" => {
         "base" => "https://hub.juheapi.com",
+        "auth" => {
+          "prefix" => "Bearer",
+        },
         "headers" => {
           "content-type" => "application/json",
         },
@@ -26,43 +29,45 @@ module TemporaryEmailServiceConfig
         "temporary_email" => {
           "fields" => [
             {
+              "active" => true,
               "name" => "code",
               "req" => false,
               "type" => "`$STRING`",
-              "active" => true,
               "index$" => 0,
             },
             {
+              "active" => true,
               "name" => "data",
               "req" => false,
               "type" => "`$OBJECT`",
-              "active" => true,
               "index$" => 1,
             },
             {
+              "active" => true,
               "name" => "msg",
               "req" => false,
               "type" => "`$STRING`",
-              "active" => true,
               "index$" => 2,
             },
           ],
           "name" => "temporary_email",
           "op" => {
             "load" => {
+              "input" => "data",
               "name" => "load",
               "points" => [
                 {
+                  "active" => true,
                   "args" => {
                     "query" => [
                       {
+                        "active" => true,
                         "example" => "434306d581f376e3aa290e7c7df966fc",
                         "kind" => "query",
                         "name" => "apikey",
                         "orig" => "apikey",
                         "reqd" => true,
                         "type" => "`$STRING`",
-                        "active" => true,
                       },
                     ],
                   },
@@ -82,11 +87,9 @@ module TemporaryEmailServiceConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "active" => true,
                   "index$" => 0,
                 },
               ],
-              "input" => "data",
               "key$" => "load",
             },
           },

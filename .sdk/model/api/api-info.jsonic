@@ -16,21 +16,7 @@ main: {
       ]
       title: "Temporary Email Service"
       version: "1.0.0"
-      tagline: "Generate disposable email addresses for anonymous sign-ups and one-off verifications"
-      homepage: "https://hub.juheapi.com"
-      docs_url: "https://hub.juheapi.com"
-      about_md: `[Temporary Email Service](https://hub.juheapi.com) is a hosted endpoint on [JuheAPI Hub](https://hub.juheapi.com) that mints throwaway email addresses you can hand out to web forms, trial sign-ups, and verification flows without exposing a personal mailbox.
-
-What you get from the API:
-
-- An HTTP endpoint that returns a freshly generated temporary email address
-- Useful for anonymous registration, short-lived verification, and scraping/automation pipelines that need disposable inboxes
-
-The API is fronted by JuheAPI Hub and is called over HTTPS at \`https://hub.juheapi.com\`. An API key is required and is passed as the \`apikey\` query parameter. The catalogue listing on freepublicapis.com lists CORS as disabled, so calls are expected to originate from server-side code rather than browser front-ends.`
-      entity_desc: {
-        temporary_email: "A disposable email address resource minted on demand, created via `GET /temp-mail/v1/create`."
-      }
-      auth: false
     }
   }
 }
+

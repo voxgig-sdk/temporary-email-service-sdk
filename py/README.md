@@ -1,6 +1,11 @@
 # TemporaryEmailService Python SDK
 
-The Python SDK for the TemporaryEmailService API. Provides an entity-oriented interface following Pythonic conventions.
+
+
+The Python SDK for the TemporaryEmailService API — an entity-oriented client following Pythonic conventions.
+
+> Other languages, the CLI, and MCP server live alongside this one — see
+> the [top-level README](../README.md).
 
 
 ## Install
@@ -23,15 +28,18 @@ loading a specific record.
 ### 1. Create a client
 
 ```python
+import os
 from temporaryemailservice_sdk import TemporaryEmailServiceSDK
 
-client = TemporaryEmailServiceSDK({})
+client = TemporaryEmailServiceSDK({
+    "apikey": os.environ.get("TEMPORARY-EMAIL-SERVICE_APIKEY"),
+})
 ```
 
 ### 3. Load a temporaryemail
 
 ```python
-result, err = client.TemporaryEmail(None).load({"id": "example_id"}, None)
+result, err = client.TemporaryEmail().load({"id": "example_id"})
 if err:
     raise Exception(err)
 print(result)
@@ -79,11 +87,9 @@ print(fetchdef["headers"])
 Create a mock client for unit testing — no server required:
 
 ```python
-client = TemporaryEmailServiceSDK.test(None, None)
+client = TemporaryEmailServiceSDK.test()
 
-result, err = client.TemporaryEmailService(None).load(
-    {"id": "test01"}, None
-)
+result, err = client.TemporaryEmailService().load({"id": "test01"})
 # result contains mock response data
 ```
 
@@ -114,6 +120,7 @@ Create a `.env.local` file at the project root:
 
 ```
 TEMPORARY-EMAIL-SERVICE_TEST_LIVE=TRUE
+TEMPORARY-EMAIL-SERVICE_APIKEY=<your-key>
 ```
 
 Then run:
@@ -137,6 +144,7 @@ Creates a new SDK client.
 
 | Option | Type | Description |
 | --- | --- | --- |
+| `apikey` | `str` | API key for authentication. |
 | `base` | `str` | Base URL of the API server. |
 | `prefix` | `str` | URL path prefix prepended to all requests. |
 | `suffix` | `str` | URL path suffix appended to all requests. |

@@ -73,12 +73,14 @@ function temporary_email_direct_setup($mockres)
     $env = Runner::env_override([
         "TEMPORARYEMAILSERVICE_TEST_TEMPORARY_EMAIL_ENTID" => [],
         "TEMPORARYEMAILSERVICE_TEST_LIVE" => "FALSE",
+        "TEMPORARYEMAILSERVICE_APIKEY" => "NONE",
     ]);
 
     $live = $env["TEMPORARYEMAILSERVICE_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [
+            "apikey" => $env["TEMPORARYEMAILSERVICE_APIKEY"],
         ];
         $client = new TemporaryEmailServiceSDK($merged_opts);
         return [

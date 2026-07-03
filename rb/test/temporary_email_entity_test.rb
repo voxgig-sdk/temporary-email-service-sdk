@@ -82,6 +82,7 @@ def temporary_email_basic_setup(extra)
     "TEMPORARYEMAILSERVICE_TEST_TEMPORARY_EMAIL_ENTID" => idmap,
     "TEMPORARYEMAILSERVICE_TEST_LIVE" => "FALSE",
     "TEMPORARYEMAILSERVICE_TEST_EXPLAIN" => "FALSE",
+    "TEMPORARYEMAILSERVICE_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -93,6 +94,7 @@ def temporary_email_basic_setup(extra)
   if env["TEMPORARYEMAILSERVICE_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
+        "apikey" => env["TEMPORARYEMAILSERVICE_APIKEY"],
       },
       extra || {},
     ])
