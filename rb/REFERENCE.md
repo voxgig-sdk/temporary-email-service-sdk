@@ -87,7 +87,7 @@ same parameters as `direct()`. Raises on error.
 ## TemporaryEmailEntity
 
 ```ruby
-temporary_email = client.temporary_email
+temporary_email = client.TemporaryEmail
 ```
 
 ### Fields
@@ -105,7 +105,7 @@ temporary_email = client.temporary_email
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.temporary_email.load({ "id" => "temporary_email_id" })
+result = client.TemporaryEmail.load({ "id" => "temporary_email_id" })
 ```
 
 ### Common Methods

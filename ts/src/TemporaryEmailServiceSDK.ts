@@ -204,14 +204,7 @@ class TemporaryEmailServiceSDK {
 
 
 
-  _temporary_email?: TemporaryEmailEntity
-
-  // Idiomatic facade: `client.temporary_email.list()` / `client.temporary_email.load({ id })`.
-  get temporary_email(): TemporaryEmailEntity {
-    return (this._temporary_email ??= new TemporaryEmailEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.temporary_email` instead. */
+  // Entity access: `client.TemporaryEmail().list()` / `client.TemporaryEmail().load({ id })`.
   TemporaryEmail(data?: any) {
     const self = this
     return new TemporaryEmailEntity(self,data)

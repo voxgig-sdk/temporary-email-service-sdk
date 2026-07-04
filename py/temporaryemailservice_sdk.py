@@ -220,25 +220,15 @@ class TemporaryEmailServiceSDK:
         }
 
 
-    @property
-    def temporary_email(self):
-        """Idiomatic facade: client.temporary_email.list() / client.temporary_email.load({"id": ...})."""
-        from entity.temporary_email_entity import TemporaryEmailEntity
-        cached = getattr(self, "_temporary_email", None)
-        if cached is None:
-            cached = TemporaryEmailEntity(self, None)
-            self._temporary_email = cached
-        return cached
-
-    def TemporaryEmail(self, data=None):
-        # Deprecated: use client.temporary_email instead.
+    def TemporaryEmail(self, data=None) -> "TemporaryEmailEntity":
+        """Entity factory: client.TemporaryEmail().list({}) / client.TemporaryEmail().load({"id": ...})."""
         from entity.temporary_email_entity import TemporaryEmailEntity
         return TemporaryEmailEntity(self, data)
 
 
 
     @classmethod
-    def test(cls, testopts=None, sdkopts=None):
+    def test(cls, testopts=None, sdkopts=None) -> "TemporaryEmailServiceSDK":
         if sdkopts is None:
             sdkopts = {}
         sdkopts = vs.clone(sdkopts)
@@ -258,3 +248,9 @@ class TemporaryEmailServiceSDK:
         sdk.mode = "test"
 
         return sdk
+
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from entity.temporary_email_entity import TemporaryEmailEntity

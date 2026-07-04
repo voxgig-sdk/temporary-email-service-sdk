@@ -233,10 +233,10 @@ class TemporaryEmailServiceSDK
 
     private $_temporary_email = null;
 
-    // Idiomatic facade: $client->temporary_email()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias TemporaryEmail() (PHP method
-    // names are case-insensitive).
-    public function temporary_email($data = null)
+    // Canonical facade: $client->TemporaryEmail()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->temporary_email()
+    // resolves here too.
+    public function TemporaryEmail($data = null)
     {
         require_once __DIR__ . '/entity/temporary_email_entity.php';
         if ($data === null) {

@@ -84,7 +84,7 @@ same parameters as `direct()`.
 ## TemporaryEmailEntity
 
 ```lua
-local temporary_email = client:temporary_email(nil)
+local temporary_email = client:TemporaryEmail(nil)
 ```
 
 ### Fields
@@ -102,7 +102,7 @@ local temporary_email = client:temporary_email(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:temporary_email():load({ id = "temporary_email_id" })
+local result, err = client:TemporaryEmail():load({ id = "temporary_email_id" })
 ```
 
 ### Common Methods

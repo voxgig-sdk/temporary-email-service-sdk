@@ -36,10 +36,12 @@ client = TemporaryEmailServiceSDK({
 
 ### 3. Load a temporaryemail
 
+`load()` returns the bare record (a `dict`) and raises on error.
+
 ```python
 try:
-    result = client.temporaryemail.load({"id": "example_id"})
-    print(result)
+    temporaryemail = client.TemporaryEmail().load({"id": "example_id"})
+    print(temporaryemail)
 except Exception as err:
     print(f"load failed: {err}")
 ```
@@ -87,8 +89,9 @@ Create a mock client for unit testing — no server required:
 ```python
 client = TemporaryEmailServiceSDK.test()
 
-result = client.temporaryemail.load({"id": "test01"})
-# result contains mock response data
+# Entity ops return the bare record and raise on error.
+temporaryemail = client.TemporaryEmail().load({"id": "test01"})
+# temporaryemail contains the mock response record
 ```
 
 ### Use a custom fetch function
@@ -225,7 +228,7 @@ API path: `/temp-mail/v1/create`
 
 ### TemporaryEmail
 
-Create an instance: `const temporary_email = client.temporary_email`
+Create an instance: `temporary_email = client.TemporaryEmail()`
 
 #### Operations
 
@@ -243,8 +246,8 @@ Create an instance: `const temporary_email = client.temporary_email`
 
 #### Example: Load
 
-```ts
-const temporary_email = await client.temporary_email.load({ id: 'temporary_email_id' })
+```python
+temporary_email = client.TemporaryEmail().load({"id": "temporary_email_id"})
 ```
 
 
@@ -318,7 +321,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-temporaryemail = client.temporaryemail
+temporaryemail = client.TemporaryEmail()
 temporaryemail.load({"id": "example_id"})
 
 # temporaryemail.data_get() now returns the loaded temporaryemail data

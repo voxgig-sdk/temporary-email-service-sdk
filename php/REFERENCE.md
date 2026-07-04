@@ -86,7 +86,7 @@ Prepare a fetch definition without sending the request. Returns the
 ## TemporaryEmailEntity
 
 ```php
-$temporary_email = $client->temporary_email();
+$temporary_email = $client->TemporaryEmail();
 ```
 
 ### Fields
@@ -104,7 +104,7 @@ $temporary_email = $client->temporary_email();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->temporary_email()->load(["id" => "temporary_email_id"]);
+$result = $client->TemporaryEmail()->load(["id" => "temporary_email_id"]);
 ```
 
 ### Common Methods

@@ -244,8 +244,9 @@ end
 
 
 
--- Idiomatic facade: client:temporary_email():list() / client:temporary_email():load({ id = ... })
-function TemporaryEmailServiceSDK:temporary_email(data)
+-- Idiomatic facade: client:TemporaryEmail():list() / client:TemporaryEmail():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function TemporaryEmailServiceSDK:TemporaryEmail(data)
   local EntityMod = require("entity.temporary_email_entity")
   if data == nil then
     if self._temporary_email == nil then
@@ -253,12 +254,6 @@ function TemporaryEmailServiceSDK:temporary_email(data)
     end
     return self._temporary_email
   end
-  return EntityMod.new(self, data)
-end
-
--- Deprecated: use client:temporary_email() instead.
-function TemporaryEmailServiceSDK:TemporaryEmail(data)
-  local EntityMod = require("entity.temporary_email_entity")
   return EntityMod.new(self, data)
 end
 

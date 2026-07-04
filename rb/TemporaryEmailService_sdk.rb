@@ -208,13 +208,7 @@ class TemporaryEmailServiceSDK
   end
 
 
-  # Idiomatic facade: client.temporary_email.list / client.temporary_email.load({ "id" => ... })
-  def temporary_email
-    require_relative 'entity/temporary_email_entity'
-    @temporary_email ||= TemporaryEmailEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.temporary_email instead.
+  # Canonical facade: client.TemporaryEmail.list / client.TemporaryEmail.load({ "id" => ... })
   def TemporaryEmail(data = nil)
     require_relative 'entity/temporary_email_entity'
     TemporaryEmailEntity.new(self, data)

@@ -34,8 +34,9 @@ client = TemporaryEmailServiceSDK.new({
 
 ```ruby
 begin
-  result = client.temporaryemail.load({ "id" => "example_id" })
-  puts result
+  # load returns the bare TemporaryEmail record (raises on error).
+  temporaryemail = client.TemporaryEmail.load({ "id" => "example_id" })
+  puts temporaryemail
 rescue => err
   warn "load failed: #{err}"
 end
@@ -82,13 +83,17 @@ end
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```ruby
-client = TemporaryEmailServiceSDK.test
+client = TemporaryEmailServiceSDK.test({
+  "entity" => { "temporaryemail" => { "test01" => { "id" => "test01" } } },
+})
 
-result = client.temporaryemail.load({ "id" => "test01" })
-# result contains mock response data
+# load returns the bare mock record (raises on error).
+temporaryemail = client.TemporaryEmail.load({ "id" => "test01" })
+puts temporaryemail
 ```
 
 ### Use a custom fetch function
@@ -224,7 +229,7 @@ API path: `/temp-mail/v1/create`
 
 ### TemporaryEmail
 
-Create an instance: `const temporary_email = client.temporary_email`
+Create an instance: `temporary_email = client.TemporaryEmail`
 
 #### Operations
 
@@ -242,8 +247,9 @@ Create an instance: `const temporary_email = client.temporary_email`
 
 #### Example: Load
 
-```ts
-const temporary_email = await client.temporary_email.load({ id: 'temporary_email_id' })
+```ruby
+# load returns the bare TemporaryEmail record (raises on error).
+temporary_email = client.TemporaryEmail.load({ "id" => "temporary_email_id" })
 ```
 
 
@@ -318,7 +324,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```ruby
-temporaryemail = client.temporaryemail
+temporaryemail = client.TemporaryEmail
 temporaryemail.load({ "id" => "example_id" })
 
 # temporaryemail.data_get now returns the loaded temporaryemail data

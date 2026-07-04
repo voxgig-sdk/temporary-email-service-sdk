@@ -81,7 +81,7 @@ Prepare a fetch definition without sending. Returns the `fetchdef` and raises on
 ## TemporaryEmailEntity
 
 ```python
-temporary_email = client.temporary_email
+temporary_email = client.TemporaryEmail()
 ```
 
 ### Fields
@@ -99,7 +99,7 @@ temporary_email = client.temporary_email
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.temporary_email.load({"id": "temporary_email_id"})
+result = client.TemporaryEmail().load({"id": "temporary_email_id"})
 ```
 
 ### Common Methods

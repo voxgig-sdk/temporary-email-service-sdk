@@ -28,9 +28,9 @@ const client = new TemporaryEmailServiceSDK({
   apikey: process.env.TEMPORARY_EMAIL_SERVICE_APIKEY,
 })
 
-// Load temporaryemail data
-const temporaryemail = await client.temporaryemail.load({})
-console.log(temporaryemail.data)
+// Load temporaryemail data (returns a TemporaryEmail)
+const temporaryemail = await client.TemporaryEmail().load()
+console.log(temporaryemail)
 ```
 
 See the [TypeScript README](ts/README.md) for the full guide.
@@ -89,8 +89,8 @@ client = TemporaryEmailServiceSDK({
 })
 
 
-# Load a specific temporaryemail
-temporaryemail = client.temporaryemail.load({"id": "example_id"})
+# Load a specific temporaryemail (returns the record, raises on error)
+temporaryemail = client.TemporaryEmail().load({"id": "example_id"})
 print(temporaryemail)
 ```
 
@@ -105,8 +105,8 @@ $client = new TemporaryEmailServiceSDK([
 ]);
 
 
-// Load a specific temporaryemail
-$temporaryemail = $client->temporaryemail()->load(["id" => "example_id"]);
+// Load a specific temporaryemail (returns the bare record; throws on error)
+$temporaryemail = $client->TemporaryEmail()->load(["id" => "example_id"]);
 print_r($temporaryemail);
 ```
 
@@ -134,8 +134,8 @@ client = TemporaryEmailServiceSDK.new({
 })
 
 
-# Load a specific temporaryemail
-temporaryemail = client.temporaryemail.load({ "id" => "example_id" })
+# Load a specific temporaryemail (returns the bare record; raises on error)
+temporaryemail = client.TemporaryEmail.load({ "id" => "example_id" })
 puts temporaryemail
 ```
 
@@ -150,7 +150,7 @@ local client = sdk.new({
 
 
 -- Load a specific temporaryemail
-local temporaryemail, err = client:temporaryemail():load({ id = "example_id" })
+local temporaryemail, err = client:TemporaryEmail():load({ id = "example_id" })
 print(temporaryemail)
 ```
 
@@ -163,22 +163,27 @@ in-memory mock, so unit tests run offline.
 
 ```ts
 const client = TemporaryEmailServiceSDK.test()
-const result = await client.temporaryemail.load({ id: 'test01' })
-// result.ok === true, result.data contains mock data
+const temporaryemail = await client.TemporaryEmail().load({ id: 'test01' })
+// temporaryemail is a bare TemporaryEmail populated with mock data
+console.log(temporaryemail)
 ```
 
 ### Python
 
 ```python
 client = TemporaryEmailServiceSDK.test()
-result = client.temporaryemail.load({"id": "test01"})
+temporaryemail = client.TemporaryEmail().load({"id": "test01"})
+print(temporaryemail)
 ```
 
 ### PHP
 
 ```php
-$client = TemporaryEmailServiceSDK::test();
-$result = $client->temporaryemail()->load(["id" => "test01"]);
+// Seed fixture data so offline calls resolve without a live server.
+$client = TemporaryEmailServiceSDK::test([
+    "entity" => ["temporaryemail" => ["test01" => ["id" => "test01"]]],
+]);
+$temporaryemail = $client->TemporaryEmail()->load(["id" => "test01"]);
 ```
 
 ### Golang
@@ -193,15 +198,18 @@ result, err := client.TemporaryEmail(nil).Load(
 ### Ruby
 
 ```ruby
-client = TemporaryEmailServiceSDK.test
-result = client.temporaryemail.load({ "id" => "test01" })
+# Seed fixture data so offline calls resolve without a live server.
+client = TemporaryEmailServiceSDK.test({
+  "entity" => { "temporaryemail" => { "test01" => { "id" => "test01" } } },
+})
+temporaryemail = client.TemporaryEmail.load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:temporaryemail():load({ id = "test01" })
+local result, err = client:TemporaryEmail():load({ id = "test01" })
 ```
 
 ## How it works
@@ -249,6 +257,9 @@ const result = await client.direct({
   method: 'GET',
   params: { id: 'example' },
 })
+if (result instanceof Error) {
+  throw result
+}
 console.log(result.data)
 ```
 

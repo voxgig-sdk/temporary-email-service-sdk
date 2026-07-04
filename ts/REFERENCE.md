@@ -110,7 +110,7 @@ Alias for `TemporaryEmailServiceSDK.test()`.
 ## TemporaryEmailEntity
 
 ```ts
-const temporary_email = client.temporary_email
+const temporary_email = client.TemporaryEmail()
 ```
 
 ### Fields
@@ -128,7 +128,7 @@ const temporary_email = client.temporary_email
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.temporary_email.load({ id: 'temporary_email_id' })
+const result = await client.TemporaryEmail().load({ id: 'temporary_email_id' })
 ```
 
 ### Common Methods
