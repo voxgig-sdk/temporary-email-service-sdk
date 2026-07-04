@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch TemporaryEmailLoadMatch
+---@param ctrl? table
+---@return TemporaryEmail
+---@return string? err
 function TemporaryEmailEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

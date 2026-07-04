@@ -49,8 +49,7 @@ class TemporaryEmailEntityTest extends TestCase
         // LOAD
         $temporary_email_ref01_ent = $client->TemporaryEmail(null);
         $temporary_email_ref01_match_dt0 = [];
-        [$temporary_email_ref01_data_dt0_loaded, $err] = $temporary_email_ref01_ent->load($temporary_email_ref01_match_dt0, null);
-        $this->assertNull($err);
+        $temporary_email_ref01_data_dt0_loaded = $temporary_email_ref01_ent->load($temporary_email_ref01_match_dt0, null);
         $this->assertNotNull($temporary_email_ref01_data_dt0_loaded);
 
     }

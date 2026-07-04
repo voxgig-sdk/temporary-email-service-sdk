@@ -49,8 +49,7 @@ class TestTemporaryEmailEntity:
         # LOAD
         temporary_email_ref01_ent = client.TemporaryEmail(None)
         temporary_email_ref01_match_dt0 = {}
-        temporary_email_ref01_data_dt0_loaded, err = temporary_email_ref01_ent.load(temporary_email_ref01_match_dt0, None)
-        assert err is None
+        temporary_email_ref01_data_dt0_loaded = temporary_email_ref01_ent.load(temporary_email_ref01_match_dt0, None)
         assert temporary_email_ref01_data_dt0_loaded is not None
 
 

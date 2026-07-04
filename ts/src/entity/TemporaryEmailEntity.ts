@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  TemporaryEmail,
+  TemporaryEmailLoadMatch,
+} from '../TemporaryEmailServiceTypes'
 
 // TODO: needs Entity superclass
-class TemporaryEmailEntity extends TemporaryEmailServiceEntityBase {
+class TemporaryEmailEntity extends TemporaryEmailServiceEntityBase<TemporaryEmail> {
 
   constructor(client: TemporaryEmailServiceSDK, entopts: any) {
     super(client, entopts)
@@ -32,7 +36,7 @@ class TemporaryEmailEntity extends TemporaryEmailServiceEntityBase {
 
 
 
-  async load(this: any, reqmatch?: any, ctrl?: Control) {
+  async load(this: any, reqmatch?: TemporaryEmailLoadMatch, ctrl?: Control): Promise<TemporaryEmail> {
 
     const utility = this._utility
 
@@ -136,7 +140,9 @@ class TemporaryEmailEntity extends TemporaryEmailServiceEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<TemporaryEmail> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

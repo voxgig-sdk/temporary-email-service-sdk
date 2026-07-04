@@ -42,8 +42,7 @@ class TemporaryEmailEntityTest < Minitest::Test
     # LOAD
     temporary_email_ref01_ent = client.TemporaryEmail(nil)
     temporary_email_ref01_match_dt0 = {}
-    temporary_email_ref01_data_dt0_loaded, err = temporary_email_ref01_ent.load(temporary_email_ref01_match_dt0, nil)
-    assert_nil err
+    temporary_email_ref01_data_dt0_loaded = temporary_email_ref01_ent.load(temporary_email_ref01_match_dt0, nil)
     assert !temporary_email_ref01_data_dt0_loaded.nil?
 
   end

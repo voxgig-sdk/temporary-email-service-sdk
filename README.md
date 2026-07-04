@@ -10,26 +10,26 @@ This is an unofficial SDK for the Temporary Email Service public API, generated 
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/temporary-email-service` | `npm install @voxgig-sdk/temporary-email-service` |
-| Python | `voxgig-sdk-temporary-email-service` | `pip install voxgig-sdk-temporary-email-service` |
-| PHP | `voxgig-sdk/temporary-email-service` | `composer require voxgig-sdk/temporary-email-service` |
-| Golang | `github.com/voxgig-sdk/temporary-email-service-sdk/go` | `go get github.com/voxgig-sdk/temporary-email-service-sdk/go` |
-| Ruby | `voxgig-sdk-temporary-email-service` | `gem install voxgig-sdk-temporary-email-service` |
-| Lua | `voxgig-sdk-temporary-email-service` | `luarocks install voxgig-sdk-temporary-email-service` |
+| TypeScript | `@voxgig-sdk/temporary-email-service` | publish pending — [install from git tag](https://github.com/voxgig-sdk/temporary-email-service-sdk/releases) |
+| Python | `voxgig-sdk-temporary-email-service` | publish pending — [install from git tag](https://github.com/voxgig-sdk/temporary-email-service-sdk/releases) |
+| PHP | `voxgig-sdk/temporary-email-service` | publish pending — [install from git tag](https://github.com/voxgig-sdk/temporary-email-service-sdk/releases) |
+| Golang | `github.com/voxgig-sdk/temporary-email-service-sdk/go` | `go get github.com/voxgig-sdk/temporary-email-service-sdk/go@latest` |
+| Ruby | `voxgig-sdk-temporary-email-service` | publish pending — [install from git tag](https://github.com/voxgig-sdk/temporary-email-service-sdk/releases) |
+| Lua | `voxgig-sdk-temporary-email-service` | publish pending — [install from git tag](https://github.com/voxgig-sdk/temporary-email-service-sdk/releases) |
 
 ## Quickstart
 
 ### TypeScript
 
 ```ts
-import { TemporaryEmailServiceSDK } from 'temporary-email-service'
+import { TemporaryEmailServiceSDK } from '@voxgig-sdk/temporary-email-service'
 
 const client = new TemporaryEmailServiceSDK({
-  apikey: process.env.TEMPORARY-EMAIL-SERVICE_APIKEY,
+  apikey: process.env.TEMPORARY_EMAIL_SERVICE_APIKEY,
 })
 
 // Load temporaryemail data
-const temporaryemail = await client.TemporaryEmail().load({})
+const temporaryemail = await client.temporaryemail.load({})
 console.log(temporaryemail.data)
 ```
 
@@ -71,7 +71,7 @@ The API exposes one entity:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **TemporaryEmail** |  | `/temp-mail/v1/create` |
+| **TemporaryEmail** | The TemporaryEmail entity (load). | `/temp-mail/v1/create` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -85,12 +85,12 @@ import os
 from temporaryemailservice_sdk import TemporaryEmailServiceSDK
 
 client = TemporaryEmailServiceSDK({
-    "apikey": os.environ.get("TEMPORARY-EMAIL-SERVICE_APIKEY"),
+    "apikey": os.environ.get("TEMPORARY_EMAIL_SERVICE_APIKEY"),
 })
 
 
 # Load a specific temporaryemail
-temporaryemail, err = client.TemporaryEmail().load({"id": "example_id"})
+temporaryemail = client.temporaryemail.load({"id": "example_id"})
 print(temporaryemail)
 ```
 
@@ -101,12 +101,12 @@ print(temporaryemail)
 require_once 'temporaryemailservice_sdk.php';
 
 $client = new TemporaryEmailServiceSDK([
-    "apikey" => getenv("TEMPORARY-EMAIL-SERVICE_APIKEY"),
+    "apikey" => getenv("TEMPORARY_EMAIL_SERVICE_APIKEY"),
 ]);
 
 
 // Load a specific temporaryemail
-[$temporaryemail, $err] = $client->TemporaryEmail()->load(["id" => "example_id"]);
+$temporaryemail = $client->temporaryemail()->load(["id" => "example_id"]);
 print_r($temporaryemail);
 ```
 
@@ -116,7 +116,7 @@ print_r($temporaryemail);
 import sdk "github.com/voxgig-sdk/temporary-email-service-sdk/go"
 
 client := sdk.NewTemporaryEmailServiceSDK(map[string]any{
-    "apikey": os.Getenv("TEMPORARY-EMAIL-SERVICE_APIKEY"),
+    "apikey": os.Getenv("TEMPORARY_EMAIL_SERVICE_APIKEY"),
 })
 
 // Load temporaryemail data
@@ -130,12 +130,12 @@ fmt.Println(temporaryemail)
 require_relative "TemporaryEmailService_sdk"
 
 client = TemporaryEmailServiceSDK.new({
-  "apikey" => ENV["TEMPORARY-EMAIL-SERVICE_APIKEY"],
+  "apikey" => ENV["TEMPORARY_EMAIL_SERVICE_APIKEY"],
 })
 
 
 # Load a specific temporaryemail
-temporaryemail, err = client.TemporaryEmail().load({ "id" => "example_id" })
+temporaryemail = client.temporaryemail.load({ "id" => "example_id" })
 puts temporaryemail
 ```
 
@@ -145,12 +145,12 @@ puts temporaryemail
 local sdk = require("temporary-email-service_sdk")
 
 local client = sdk.new({
-  apikey = os.getenv("TEMPORARY-EMAIL-SERVICE_APIKEY"),
+  apikey = os.getenv("TEMPORARY_EMAIL_SERVICE_APIKEY"),
 })
 
 
 -- Load a specific temporaryemail
-local temporaryemail, err = client:TemporaryEmail():load({ id = "example_id" })
+local temporaryemail, err = client:temporaryemail():load({ id = "example_id" })
 print(temporaryemail)
 ```
 
@@ -163,7 +163,7 @@ in-memory mock, so unit tests run offline.
 
 ```ts
 const client = TemporaryEmailServiceSDK.test()
-const result = await client.TemporaryEmail().load({ id: 'test01' })
+const result = await client.temporaryemail.load({ id: 'test01' })
 // result.ok === true, result.data contains mock data
 ```
 
@@ -171,14 +171,14 @@ const result = await client.TemporaryEmail().load({ id: 'test01' })
 
 ```python
 client = TemporaryEmailServiceSDK.test()
-result, err = client.TemporaryEmail().load({"id": "test01"})
+result = client.temporaryemail.load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
 $client = TemporaryEmailServiceSDK::test();
-[$result, $err] = $client->TemporaryEmail()->load(["id" => "test01"]);
+$result = $client->temporaryemail()->load(["id" => "test01"]);
 ```
 
 ### Golang
@@ -194,14 +194,14 @@ result, err := client.TemporaryEmail(nil).Load(
 
 ```ruby
 client = TemporaryEmailServiceSDK.test
-result, err = client.TemporaryEmail().load({ "id" => "test01" })
+result = client.temporaryemail.load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:TemporaryEmail():load({ id = "test01" })
+local result, err = client:temporaryemail():load({ id = "test01" })
 ```
 
 ## How it works
@@ -254,7 +254,7 @@ console.log(result.data)
 
 **Python:**
 ```python
-result, err = client.direct({
+result = client.direct({
     "path": "/api/resource/{id}",
     "method": "GET",
     "params": {"id": "example"},
@@ -263,7 +263,7 @@ result, err = client.direct({
 
 **PHP:**
 ```php
-[$result, $err] = $client->direct([
+$result = $client->direct([
     "path" => "/api/resource/{id}",
     "method" => "GET",
     "params" => ["id" => "example"],
@@ -281,7 +281,7 @@ result, err := client.Direct(map[string]any{
 
 **Ruby:**
 ```ruby
-result, err = client.direct({
+result = client.direct({
   "path" => "/api/resource/{id}",
   "method" => "GET",
   "params" => { "id" => "example" },

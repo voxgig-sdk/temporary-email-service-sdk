@@ -9,12 +9,9 @@ The Lua SDK for the TemporaryEmailService API — an entity-oriented client usin
 
 
 ## Install
-```bash
-luarocks install voxgig-sdk-temporary-email-service
-```
-
-If the module is not yet published, add the source directory to
-your `LUA_PATH`:
+This package is not yet published to LuaRocks. Install it from the
+GitHub release tag (`lua/vX.Y.Z`, see [Releases](https://github.com/voxgig-sdk/temporary-email-service-sdk/releases)),
+or add the source directory to your `LUA_PATH`:
 
 ```bash
 export LUA_PATH="path/to/lua/?.lua;path/to/lua/?/init.lua;;"
@@ -32,14 +29,14 @@ loading a specific record.
 local sdk = require("temporary-email-service_sdk")
 
 local client = sdk.new({
-  apikey = os.getenv("TEMPORARY-EMAIL-SERVICE_APIKEY"),
+  apikey = os.getenv("TEMPORARY_EMAIL_SERVICE_APIKEY"),
 })
 ```
 
 ### 3. Load a temporaryemail
 
 ```lua
-local result, err = client:TemporaryEmail():load({ id = "example_id" })
+local result, err = client:temporaryemail():load({ id = "example_id" })
 if err then error(err) end
 print(result)
 ```
@@ -87,7 +84,7 @@ Create a mock client for unit testing — no server required:
 ```lua
 local client = sdk.test()
 
-local result, err = client:TemporaryEmailService():load({ id = "test01" })
+local result, err = client:temporaryemail():load({ id = "test01" })
 -- result contains mock response data
 ```
 
@@ -120,8 +117,8 @@ local client = sdk.new({
 Create a `.env.local` file at the project root:
 
 ```
-TEMPORARY-EMAIL-SERVICE_TEST_LIVE=TRUE
-TEMPORARY-EMAIL-SERVICE_APIKEY=<your-key>
+TEMPORARY_EMAIL_SERVICE_TEST_LIVE=TRUE
+TEMPORARY_EMAIL_SERVICE_APIKEY=<your-key>
 ```
 
 Then run:
@@ -223,7 +220,7 @@ API path: `/temp-mail/v1/create`
 
 ### TemporaryEmail
 
-Create an instance: `const temporary_email = client.TemporaryEmail()`
+Create an instance: `const temporary_email = client.temporary_email`
 
 #### Operations
 
@@ -242,7 +239,7 @@ Create an instance: `const temporary_email = client.TemporaryEmail()`
 #### Example: Load
 
 ```ts
-const temporary_email = await client.TemporaryEmail().load({ id: 'temporary_email_id' })
+const temporary_email = await client.temporary_email.load({ id: 'temporary_email_id' })
 ```
 
 
@@ -317,11 +314,11 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```lua
-local moon = client:Moon(nil)
-moon:load({ planet_id = "earth", id = "luna" }, nil)
+local temporaryemail = client:temporaryemail()
+temporaryemail:load({ id = "example_id" })
 
--- moon:data_get() now returns the loaded moon data
--- moon:match_get() returns the last match criteria
+-- temporaryemail:data_get() now returns the loaded temporaryemail data
+-- temporaryemail:match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration
