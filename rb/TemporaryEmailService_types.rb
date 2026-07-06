@@ -25,7 +25,7 @@ TemporaryEmail = Struct.new(
   keyword_init: true
 )
 
-# Match filter for TemporaryEmail#load (any subset of TemporaryEmail fields).
+# Request payload for TemporaryEmail#load.
 #
 # @!attribute [rw] code
 #   @return [String, nil]

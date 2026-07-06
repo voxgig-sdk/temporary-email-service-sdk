@@ -8,7 +8,7 @@ Complete API reference for the TemporaryEmailService Python SDK.
 ### Constructor
 
 ```python
-from temporary-email-service_sdk import TemporaryEmailServiceSDK
+from temporaryemailservice_sdk import TemporaryEmailServiceSDK
 
 client = TemporaryEmailServiceSDK(options)
 ```
@@ -88,9 +88,9 @@ temporary_email = client.TemporaryEmail()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `code` | ``$STRING`` | No |  |
-| `data` | ``$OBJECT`` | No |  |
-| `msg` | ``$STRING`` | No |  |
+| `code` | `str` | No |  |
+| `data` | `dict` | No |  |
+| `msg` | `str` | No |  |
 
 ### Operations
 
@@ -99,7 +99,7 @@ temporary_email = client.TemporaryEmail()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.TemporaryEmail().load({"id": "temporary_email_id"})
+result = client.TemporaryEmail().load()
 ```
 
 ### Common Methods

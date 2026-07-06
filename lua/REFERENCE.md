@@ -91,9 +91,9 @@ local temporary_email = client:TemporaryEmail(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `code` | ``$STRING`` | No |  |
-| `data` | ``$OBJECT`` | No |  |
-| `msg` | ``$STRING`` | No |  |
+| `code` | `string` | No |  |
+| `data` | `table` | No |  |
+| `msg` | `string` | No |  |
 
 ### Operations
 
@@ -102,7 +102,7 @@ local temporary_email = client:TemporaryEmail(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:TemporaryEmail():load({ id = "temporary_email_id" })
+local result, err = client:TemporaryEmail():load()
 ```
 
 ### Common Methods

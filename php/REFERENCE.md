@@ -8,7 +8,7 @@ Complete API reference for the TemporaryEmailService PHP SDK.
 ### Constructor
 
 ```php
-require_once __DIR__ . '/temporary-email-service_sdk.php';
+require_once __DIR__ . '/temporaryemailservice_sdk.php';
 
 $client = new TemporaryEmailServiceSDK($options);
 ```
@@ -46,11 +46,11 @@ $client = TemporaryEmailServiceSDK::test();
 
 Create a new `TemporaryEmailEntity` instance. Pass `null` for no initial data.
 
-#### `optionsMap(): array`
+#### `options_map(): array`
 
 Return a deep copy of the current SDK options.
 
-#### `getUtility(): ProjectNameUtility`
+#### `get_utility(): TemporaryEmailServiceUtility`
 
 Return a copy of the SDK utility object.
 
@@ -93,9 +93,9 @@ $temporary_email = $client->TemporaryEmail();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `code` | ``$STRING`` | No |  |
-| `data` | ``$OBJECT`` | No |  |
-| `msg` | ``$STRING`` | No |  |
+| `code` | `string` | No |  |
+| `data` | `array` | No |  |
+| `msg` | `string` | No |  |
 
 ### Operations
 
@@ -104,24 +104,24 @@ $temporary_email = $client->TemporaryEmail();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->TemporaryEmail()->load(["id" => "temporary_email_id"]);
+$result = $client->TemporaryEmail()->load();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -130,7 +130,7 @@ Set the entity match criteria.
 Create a new `TemporaryEmailEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 

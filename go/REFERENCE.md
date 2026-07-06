@@ -98,9 +98,9 @@ temporary_email := client.TemporaryEmail(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `code` | ``$STRING`` | No |  |
-| `data` | ``$OBJECT`` | No |  |
-| `msg` | ``$STRING`` | No |  |
+| `code` | `string` | No |  |
+| `data` | `map[string]any` | No |  |
+| `msg` | `string` | No |  |
 
 ### Operations
 
@@ -109,7 +109,7 @@ temporary_email := client.TemporaryEmail(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.TemporaryEmail(nil).Load(map[string]any{"id": "temporary_email_id"}, nil)
+result, err := client.TemporaryEmail(nil).Load(nil, nil)
 ```
 
 ### Common Methods

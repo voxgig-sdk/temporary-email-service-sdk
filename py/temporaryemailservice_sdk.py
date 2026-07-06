@@ -221,7 +221,7 @@ class TemporaryEmailServiceSDK:
 
 
     def TemporaryEmail(self, data=None) -> "TemporaryEmailEntity":
-        """Entity factory: client.TemporaryEmail().list({}) / client.TemporaryEmail().load({"id": ...})."""
+        """Entity factory: client.TemporaryEmail().list() / client.TemporaryEmail().load({"id": ...})."""
         from entity.temporary_email_entity import TemporaryEmailEntity
         return TemporaryEmailEntity(self, data)
 

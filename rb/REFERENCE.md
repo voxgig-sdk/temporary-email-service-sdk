@@ -8,7 +8,7 @@ Complete API reference for the TemporaryEmailService Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'temporary-email-service_sdk'
+require_relative 'TemporaryEmailService_sdk'
 
 client = TemporaryEmailServiceSDK.new(options)
 ```
@@ -94,9 +94,9 @@ temporary_email = client.TemporaryEmail
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `code` | ``$STRING`` | No |  |
-| `data` | ``$OBJECT`` | No |  |
-| `msg` | ``$STRING`` | No |  |
+| `code` | `String` | No |  |
+| `data` | `Hash` | No |  |
+| `msg` | `String` | No |  |
 
 ### Operations
 
@@ -105,7 +105,7 @@ temporary_email = client.TemporaryEmail
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.TemporaryEmail.load({ "id" => "temporary_email_id" })
+result = client.TemporaryEmail.load()
 ```
 
 ### Common Methods

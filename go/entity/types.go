@@ -15,8 +15,7 @@ type TemporaryEmail struct {
 	Msg *string `json:"msg,omitempty"`
 }
 
-// TemporaryEmailLoadMatch mirrors the temporary_email fields as an all-optional match
-// filter (Go analog of Partial<TemporaryEmail>).
+// TemporaryEmailLoadMatch is the typed request payload for TemporaryEmail.LoadTyped.
 type TemporaryEmailLoadMatch struct {
 	Code *string `json:"code,omitempty"`
 	Data *map[string]any `json:"data,omitempty"`

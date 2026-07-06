@@ -12,6 +12,9 @@
 ---@field msg? string
 
 ---@class TemporaryEmailLoadMatch
+---@field code? string
+---@field data? table
+---@field msg? string
 
 local M = {}
 

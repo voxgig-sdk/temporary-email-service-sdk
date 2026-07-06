@@ -11,5 +11,9 @@ export interface TemporaryEmail {
   msg?: string
 }
 
-export type TemporaryEmailLoadMatch = Partial<TemporaryEmail>
+export interface TemporaryEmailLoadMatch {
+  code?: string
+  data?: Record<string, any>
+  msg?: string
+}
 

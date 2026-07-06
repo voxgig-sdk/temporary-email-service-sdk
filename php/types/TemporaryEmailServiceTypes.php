@@ -20,7 +20,7 @@ class TemporaryEmail
     public ?string $msg = null;
 }
 
-/** Match filter for TemporaryEmail#load (any subset of TemporaryEmail fields). */
+/** Request payload for TemporaryEmail#load. */
 class TemporaryEmailLoadMatch
 {
     public ?string $code = null;

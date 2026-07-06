@@ -117,9 +117,9 @@ const temporary_email = client.TemporaryEmail()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `code` | ``$STRING`` | No |  |
-| `data` | ``$OBJECT`` | No |  |
-| `msg` | ``$STRING`` | No |  |
+| `code` | `string` | No |  |
+| `data` | `Record<string, any>` | No |  |
+| `msg` | `string` | No |  |
 
 ### Operations
 
@@ -128,7 +128,7 @@ const temporary_email = client.TemporaryEmail()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.TemporaryEmail().load({ id: 'temporary_email_id' })
+const result = await client.TemporaryEmail().load()
 ```
 
 ### Common Methods
