@@ -8,15 +8,22 @@ main: {
         url: "https://hub.juheapi.com"
       }
       description: "This API allows users to generate temporary email addresses for receiving emails anonymously. It helps in protecting user privacy while signing up for online services without exposing personal email accounts."
+      security: {
+        in: "query"
+        name: "apikey"
+        prefix: ""
+        scheme: "ApiKeyAuth"
+        type: "apiKey"
+      }
       servers: [
         {
           description: "Production server"
           url: "https://hub.juheapi.com"
         }
       ]
+      summary: "This API allows users to generate temporary email addresses for receiving emails anonymously."
       title: "Temporary Email Service"
       version: "1.0.0"
+      website: "https://hub.juheapi.com"
     }
   }
-}
-

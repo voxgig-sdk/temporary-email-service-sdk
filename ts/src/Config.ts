@@ -39,7 +39,7 @@ class Config {
     base: 'https://hub.juheapi.com',
 
     auth: {
-      prefix: 'Bearer',
+      prefix: '',
     },
 
     headers: {

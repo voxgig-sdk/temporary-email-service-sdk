@@ -91,7 +91,8 @@ same parameters as `Direct()`.
 ## TemporaryEmailEntity
 
 ```go
-temporary_email := client.TemporaryEmail(nil)
+temporaryEmail := client.TemporaryEmail(nil)
+fmt.Println(temporaryEmail.GetName()) // "temporary_email"
 ```
 
 ### Fields
@@ -110,6 +111,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.TemporaryEmail(nil).Load(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods

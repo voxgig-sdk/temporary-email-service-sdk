@@ -53,12 +53,12 @@ func main() {
         "apikey": os.Getenv("TEMPORARY_EMAIL_SERVICE_APIKEY"),
     })
 
-    // Load a single temporaryemail — the value is the loaded record.
-    temporaryemail, err := client.TemporaryEmail(nil).Load(nil, nil)
+    // Load a single temporaryEmail — the value is the loaded record.
+    temporaryEmail, err := client.TemporaryEmail(nil).Load(nil, nil)
     if err != nil {
         panic(err)
     }
-    fmt.Println(temporaryemail)
+    fmt.Println(temporaryEmail)
 }
 ```
 
@@ -138,13 +138,13 @@ Create a mock client for unit testing — no server required:
 ```go
 client := sdk.Test()
 
-temporaryemail, err := client.TemporaryEmail(nil).Load(
+temporaryEmail, err := client.TemporaryEmail(nil).Load(
     nil, nil,
 )
 if err != nil {
     panic(err)
 }
-fmt.Println(temporaryemail) // the returned mock data
+fmt.Println(temporaryEmail) // the returned mock data
 ```
 
 ### Use a custom fetch function
@@ -250,9 +250,9 @@ Check `err` first, then use the value directly (or the typed
 `...Typed` variants, which return the entity's model struct and a typed
 slice):
 
-    temporaryemail, err := client.TemporaryEmail(nil).Load(nil, nil)
+    temporaryEmail, err := client.TemporaryEmail(nil).Load(nil, nil)
     if err != nil { /* handle */ }
-    // temporaryemail is the returned record
+    // temporaryEmail is the returned record
 
 Only `Direct()` returns a response envelope — a `map[string]any` with
 `"ok"`, `"status"`, `"headers"`, and `"data"` keys.
@@ -278,7 +278,7 @@ API path: `/temp-mail/v1/create`
 
 ### TemporaryEmail
 
-Create an instance: `temporary_email := client.TemporaryEmail(nil)`
+Create an instance: `temporaryEmail := client.TemporaryEmail(nil)`
 
 #### Operations
 
@@ -297,11 +297,11 @@ Create an instance: `temporary_email := client.TemporaryEmail(nil)`
 #### Example: Load
 
 ```go
-temporary_email, err := client.TemporaryEmail(nil).Load(nil, nil)
+temporaryEmail, err := client.TemporaryEmail(nil).Load(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(temporary_email) // the loaded record
+fmt.Println(temporaryEmail) // the loaded record
 ```
 
 
