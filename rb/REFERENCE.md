@@ -94,9 +94,9 @@ temporary_email = client.TemporaryEmail
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `code` | `String` | No |  |
-| `data` | `Hash` | No |  |
-| `msg` | `String` | No |  |
+| `email` | `String` | No |  |
+| `expiresAt` | `String` | No |  |
+| `token` | `String` | No |  |
 
 ### Operations
 

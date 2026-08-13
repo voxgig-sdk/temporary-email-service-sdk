@@ -10,35 +10,35 @@
 
 # TemporaryEmail entity data model.
 #
-# @!attribute [rw] code
+# @!attribute [rw] email
 #   @return [String, nil]
 #
-# @!attribute [rw] data
-#   @return [Hash, nil]
+# @!attribute [rw] expiresAt
+#   @return [String, nil]
 #
-# @!attribute [rw] msg
+# @!attribute [rw] token
 #   @return [String, nil]
 TemporaryEmail = Struct.new(
-  :code,
-  :data,
-  :msg,
+  :email,
+  :expiresAt,
+  :token,
   keyword_init: true
 )
 
 # Request payload for TemporaryEmail#load.
 #
-# @!attribute [rw] code
+# @!attribute [rw] email
 #   @return [String, nil]
 #
-# @!attribute [rw] data
-#   @return [Hash, nil]
+# @!attribute [rw] expiresAt
+#   @return [String, nil]
 #
-# @!attribute [rw] msg
+# @!attribute [rw] token
 #   @return [String, nil]
 TemporaryEmailLoadMatch = Struct.new(
-  :code,
-  :data,
-  :msg,
+  :email,
+  :expiresAt,
+  :token,
   keyword_init: true
 )
 

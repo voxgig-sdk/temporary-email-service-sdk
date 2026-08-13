@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# TemporaryEmailService SDK exists test
 
 import pytest
 from temporaryemailservice_sdk import TemporaryEmailServiceSDK

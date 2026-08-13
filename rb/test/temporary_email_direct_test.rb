@@ -65,16 +65,16 @@ def temporary_email_direct_setup(mockres)
   calls = []
 
   env = Runner.env_override({
-    "TEMPORARYEMAILSERVICE_TEST_TEMPORARY_EMAIL_ENTID" => {},
-    "TEMPORARYEMAILSERVICE_TEST_LIVE" => "FALSE",
-    "TEMPORARYEMAILSERVICE_APIKEY" => "NONE",
+    "TEMPORARY_EMAIL_SERVICE_TEST_TEMPORARY_EMAIL_ENTID" => {},
+    "TEMPORARY_EMAIL_SERVICE_TEST_LIVE" => "FALSE",
+    "TEMPORARY_EMAIL_SERVICE_APIKEY" => "NONE",
   })
 
-  live = env["TEMPORARYEMAILSERVICE_TEST_LIVE"] == "TRUE"
+  live = env["TEMPORARY_EMAIL_SERVICE_TEST_LIVE"] == "TRUE"
 
   if live
     merged_opts = {
-      "apikey" => env["TEMPORARYEMAILSERVICE_APIKEY"],
+      "apikey" => env["TEMPORARY_EMAIL_SERVICE_APIKEY"],
     }
     client = TemporaryEmailServiceSDK.new(merged_opts)
     return {

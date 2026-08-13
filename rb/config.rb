@@ -30,21 +30,21 @@ module TemporaryEmailServiceConfig
           "fields" => [
             {
               "active" => true,
-              "name" => "code",
+              "name" => "email",
               "req" => false,
               "type" => "`$STRING`",
               "index$" => 0,
             },
             {
               "active" => true,
-              "name" => "data",
+              "name" => "expiresAt",
               "req" => false,
-              "type" => "`$OBJECT`",
+              "type" => "`$STRING`",
               "index$" => 1,
             },
             {
               "active" => true,
-              "name" => "msg",
+              "name" => "token",
               "req" => false,
               "type" => "`$STRING`",
               "index$" => 2,
@@ -71,6 +71,7 @@ module TemporaryEmailServiceConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/temp-mail/v1/create",
                   "parts" => [
@@ -85,7 +86,7 @@ module TemporaryEmailServiceConfig
                   },
                   "transform" => {
                     "req" => "`reqdata`",
-                    "res" => "`body`",
+                    "res" => "`body.data`",
                   },
                   "index$" => 0,
                 },

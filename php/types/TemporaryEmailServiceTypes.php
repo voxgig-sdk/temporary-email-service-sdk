@@ -15,16 +15,16 @@ declare(strict_types=1);
 /** TemporaryEmail entity data model. */
 class TemporaryEmail
 {
-    public ?string $code = null;
-    public ?array $data = null;
-    public ?string $msg = null;
+    public ?string $email = null;
+    public ?string $expiresAt = null;
+    public ?string $token = null;
 }
 
 /** Request payload for TemporaryEmail#load. */
 class TemporaryEmailLoadMatch
 {
-    public ?string $code = null;
-    public ?array $data = null;
-    public ?string $msg = null;
+    public ?string $email = null;
+    public ?string $expiresAt = null;
+    public ?string $token = null;
 }
 

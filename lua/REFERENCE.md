@@ -91,9 +91,9 @@ local temporary_email = client:TemporaryEmail(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `code` | `string` | No |  |
-| `data` | `table` | No |  |
-| `msg` | `string` | No |  |
+| `email` | `string` | No |  |
+| `expiresAt` | `string` | No |  |
+| `token` | `string` | No |  |
 
 ### Operations
 

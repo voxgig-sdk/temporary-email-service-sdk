@@ -263,9 +263,9 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"code"` |  |
-| `"data"` |  |
-| `"msg"` |  |
+| `"email"` |  |
+| `"expiresAt"` |  |
+| `"token"` |  |
 
 Operations: Load.
 
@@ -290,9 +290,9 @@ Create an instance: `temporaryEmail := client.TemporaryEmail(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `code` | `string` |  |
-| `data` | `map[string]any` |  |
-| `msg` | `string` |  |
+| `email` | `string` |  |
+| `expiresAt` | `string` |  |
+| `token` | `string` |  |
 
 #### Example: Load
 

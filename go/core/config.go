@@ -29,21 +29,21 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"active": true,
-						"name": "code",
+						"name": "email",
 						"req": false,
 						"type": "`$STRING`",
 						"index$": 0,
 					},
 					map[string]any{
 						"active": true,
-						"name": "data",
+						"name": "expiresAt",
 						"req": false,
-						"type": "`$OBJECT`",
+						"type": "`$STRING`",
 						"index$": 1,
 					},
 					map[string]any{
 						"active": true,
-						"name": "msg",
+						"name": "token",
 						"req": false,
 						"type": "`$STRING`",
 						"index$": 2,
@@ -70,6 +70,7 @@ func MakeConfig() map[string]any {
 										},
 									},
 								},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/temp-mail/v1/create",
 								"parts": []any{
@@ -84,12 +85,11 @@ func MakeConfig() map[string]any {
 								},
 								"transform": map[string]any{
 									"req": "`reqdata`",
-									"res": "`body`",
+									"res": "`body.data`",
 								},
 								"index$": 0,
 							},
 						},
-						"key$": "load",
 					},
 				},
 				"relations": map[string]any{

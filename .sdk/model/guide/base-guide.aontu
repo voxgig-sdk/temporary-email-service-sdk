@@ -8,6 +8,7 @@ guide: {
   entity: temporary_email: {
     path: "/temp-mail/v1/create": {
       op: load: method: *GET
+      op: load: transform: res: *("`body.data`")|top
     }
   }
 

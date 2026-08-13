@@ -36,7 +36,7 @@ client = TemporaryEmailServiceSDK.new({
 
 ```ruby
 begin
-  # load returns the bare TemporaryEmail record (raises on error).
+  # load returns the ENTITY — call data_get for the TemporaryEmail record (raises on error).
   temporaryemail = client.TemporaryEmail.load()
   puts temporaryemail
 rescue => err
@@ -119,7 +119,8 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = TemporaryEmailServiceSDK.test
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 temporaryemail = client.TemporaryEmail.load()
 puts temporaryemail
 ```
@@ -238,9 +239,9 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `code` |  |
-| `data` |  |
-| `msg` |  |
+| `email` |  |
+| `expiresAt` |  |
+| `token` |  |
 
 Operations: Load.
 
@@ -265,14 +266,14 @@ Create an instance: `temporary_email = client.TemporaryEmail`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `code` | `String` |  |
-| `data` | `Hash` |  |
-| `msg` | `String` |  |
+| `email` | `String` |  |
+| `expiresAt` | `String` |  |
+| `token` | `String` |  |
 
 #### Example: Load
 
 ```ruby
-# load returns the bare TemporaryEmail record (raises on error).
+# load returns the ENTITY — call data_get for the TemporaryEmail record (raises on error).
 temporary_email = client.TemporaryEmail.load()
 ```
 

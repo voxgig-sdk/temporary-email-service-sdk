@@ -99,9 +99,9 @@ fmt.Println(temporaryEmail.GetName()) // "temporary_email"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `code` | `string` | No |  |
-| `data` | `map[string]any` | No |  |
-| `msg` | `string` | No |  |
+| `email` | `string` | No |  |
+| `expiresAt` | `string` | No |  |
+| `token` | `string` | No |  |
 
 ### Operations
 

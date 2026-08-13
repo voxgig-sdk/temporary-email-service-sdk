@@ -6,14 +6,14 @@
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 
 export interface TemporaryEmail {
-  code?: string
-  data?: Record<string, any>
-  msg?: string
+  email?: string
+  expiresAt?: string
+  token?: string
 }
 
 export interface TemporaryEmailLoadMatch {
-  code?: string
-  data?: Record<string, any>
-  msg?: string
+  email?: string
+  expiresAt?: string
+  token?: string
 }
 

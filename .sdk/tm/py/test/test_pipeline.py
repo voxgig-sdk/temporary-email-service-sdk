@@ -16,11 +16,11 @@
 import pytest
 
 from projectname_sdk import TemporaryEmailServiceSDK
-from core.error import TemporaryEmailServiceError
-from core.result import TemporaryEmailServiceResult
-from core.response import TemporaryEmailServiceResponse
-from core.spec import TemporaryEmailServiceSpec
-from feature.base_feature import TemporaryEmailServiceBaseFeature
+from projectname_sdk.core.error import TemporaryEmailServiceError
+from projectname_sdk.core.result import TemporaryEmailServiceResult
+from projectname_sdk.core.response import TemporaryEmailServiceResponse
+from projectname_sdk.core.spec import TemporaryEmailServiceSpec
+from projectname_sdk.feature.base_feature import TemporaryEmailServiceBaseFeature
 
 
 def _client():

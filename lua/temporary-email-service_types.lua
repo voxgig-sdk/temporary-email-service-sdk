@@ -7,14 +7,14 @@
 -- edit by hand.
 
 ---@class TemporaryEmail
----@field code? string
----@field data? table
----@field msg? string
+---@field email? string
+---@field expiresAt? string
+---@field token? string
 
 ---@class TemporaryEmailLoadMatch
----@field code? string
----@field data? table
----@field msg? string
+---@field email? string
+---@field expiresAt? string
+---@field token? string
 
 local M = {}
 

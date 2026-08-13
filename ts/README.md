@@ -123,7 +123,8 @@ Create a mock client for unit testing — no server required:
 const client = TemporaryEmailServiceSDK.test()
 
 const temporaryemail = await client.TemporaryEmail().load()
-// temporaryemail is a bare entity populated with mock response data
+// temporaryemail is the entity, populated with mock response data
+// — call temporaryemail.data() for the record itself
 console.log(temporaryemail)
 ```
 
@@ -290,9 +291,9 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `code` |  |
-| `data` |  |
-| `msg` |  |
+| `email` |  |
+| `expiresAt` |  |
+| `token` |  |
 
 Operations: load.
 
@@ -317,9 +318,9 @@ Create an instance: `const temporary_email = client.TemporaryEmail()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `code` | `string` |  |
-| `data` | `Record<string, any>` |  |
-| `msg` | `string` |  |
+| `email` | `string` |  |
+| `expiresAt` | `string` |  |
+| `token` | `string` |  |
 
 #### Example: Load
 

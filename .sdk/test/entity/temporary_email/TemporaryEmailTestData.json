@@ -2,21 +2,21 @@
   "existing": {
     "temporary_email": {
       "TEMPORARY_EMAIL00": {
-        "code": "s1e",
-        "data": {},
-        "msg": "s20",
+        "email": "s1e",
+        "expiresAt": "s1f",
+        "token": "s20",
         "id": "TEMPORARY_EMAIL00"
       },
       "TEMPORARY_EMAIL01": {
-        "code": "s3c",
-        "data": {},
-        "msg": "s3e",
+        "email": "s3c",
+        "expiresAt": "s3d",
+        "token": "s3e",
         "id": "TEMPORARY_EMAIL01"
       },
       "TEMPORARY_EMAIL02": {
-        "code": "s5a",
-        "data": {},
-        "msg": "s5c",
+        "email": "s5a",
+        "expiresAt": "s5b",
+        "token": "s5c",
         "id": "TEMPORARY_EMAIL02"
       }
     }
@@ -24,9 +24,9 @@
   "new": {
     "temporary_email": {
       "temporary_email_ref01": {
-        "code": "s78",
-        "data": {},
-        "msg": "s7a"
+        "email": "s78",
+        "expiresAt": "s79",
+        "token": "s7a"
       }
     }
   }

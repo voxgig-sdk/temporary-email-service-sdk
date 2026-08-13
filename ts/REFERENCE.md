@@ -117,9 +117,9 @@ const temporary_email = client.TemporaryEmail()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `code` | `string` | No |  |
-| `data` | `Record<string, any>` | No |  |
-| `msg` | `string` | No |  |
+| `email` | `string` | No |  |
+| `expiresAt` | `string` | No |  |
+| `token` | `string` | No |  |
 
 ### Operations
 

@@ -6,17 +6,17 @@ main: kit: entity: temporary_email: {
 
   fields: [
     {
-      name: "code"
+      name: "email"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "data"
+      name: "expiresAt"
       req: false
-      type: "`$OBJECT`"
+      type: "`$STRING`"
     }
     {
-      name: "msg"
+      name: "token"
       req: false
       type: "`$STRING`"
     }
@@ -54,7 +54,7 @@ main: kit: entity: temporary_email: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.data`"
           }
         }
       ]
