@@ -36,7 +36,7 @@ class Config {
 
 
   options = {
-    base: 'https://hub.juheapi.com',
+    base: "https://hub.juheapi.com",
 
     auth: {
       prefix: '',
@@ -59,25 +59,16 @@ class Config {
     "temporary_email": {
       "fields": [
         {
-          "active": true,
           "name": "email",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 0
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "expiresAt",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 1
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "token",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 2
+          "type": "`$STRING`"
         }
       ],
       "name": "temporary_email",
@@ -87,11 +78,9 @@ class Config {
           "name": "load",
           "points": [
             {
-              "active": true,
               "args": {
                 "query": [
                   {
-                    "active": true,
                     "example": "434306d581f376e3aa290e7c7df966fc",
                     "kind": "query",
                     "name": "apikey",
@@ -117,11 +106,9 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body.data`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "load"
+          ]
         }
       },
       "relations": {

@@ -28,7 +28,7 @@ class TemporaryEmailServiceSDK
     utility = TemporaryEmailServiceUtility.new
     @_utility = utility
 
-    config = TemporaryEmailServiceConfig.make_config
+    config = TemporaryEmailServiceConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,
