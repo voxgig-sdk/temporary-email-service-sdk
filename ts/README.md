@@ -9,7 +9,7 @@ The API is exposed as capitalised, semantic **Entities** — e.g.
 instead of raw URL paths and query parameters. This keeps the surface
 predictable and low-friction for both humans and AI agents.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go`, `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb` — see
 > the [top-level README](../README.md).
 
 
@@ -291,9 +291,9 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `email` |  |
-| `expiresAt` |  |
-| `token` |  |
+| `email` | Generated temporary email address |
+| `expiresAt` | Expiration timestamp of the temporary email |
+| `token` | Token for accessing the mailbox |
 
 Operations: load.
 
@@ -318,9 +318,9 @@ Create an instance: `const temporary_email = client.TemporaryEmail()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `email` | `string` |  |
-| `expiresAt` | `string` |  |
-| `token` | `string` |  |
+| `email` | `string` | Generated temporary email address |
+| `expiresAt` | `string` | Expiration timestamp of the temporary email |
+| `token` | `string` | Token for accessing the mailbox |
 
 #### Example: Load
 

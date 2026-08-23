@@ -229,9 +229,9 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `email` |  |
-| `expiresAt` |  |
-| `token` |  |
+| `email` | Generated temporary email address |
+| `expiresAt` | Expiration timestamp of the temporary email |
+| `token` | Token for accessing the mailbox |
 
 Operations: Load.
 
@@ -256,9 +256,9 @@ Create an instance: `local temporary_email = client:TemporaryEmail(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `email` | `string` |  |
-| `expiresAt` | `string` |  |
-| `token` | `string` |  |
+| `email` | `string` | Generated temporary email address |
+| `expiresAt` | `string` | Expiration timestamp of the temporary email |
+| `token` | `string` | Token for accessing the mailbox |
 
 #### Example: Load
 

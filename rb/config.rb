@@ -19,6 +19,9 @@ module TemporaryEmailServiceConfig
     {
       "main" => {
         "name" => "TemporaryEmailService",
+        "slug" => "temporary-email-service",
+        "version" => "0.0.1",
+        "target" => "rb",
       },
       "feature" => {
         "test" => {
@@ -44,14 +47,17 @@ module TemporaryEmailServiceConfig
           "fields" => [
             {
               "name" => "email",
+              "short" => "Generated temporary email address",
               "type" => "`$STRING`",
             },
             {
               "name" => "expiresAt",
+              "short" => "Expiration timestamp of the temporary email",
               "type" => "`$STRING`",
             },
             {
               "name" => "token",
+              "short" => "Token for accessing the mailbox",
               "type" => "`$STRING`",
             },
           ],

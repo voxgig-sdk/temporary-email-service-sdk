@@ -239,9 +239,9 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `email` |  |
-| `expiresAt` |  |
-| `token` |  |
+| `email` | Generated temporary email address |
+| `expiresAt` | Expiration timestamp of the temporary email |
+| `token` | Token for accessing the mailbox |
 
 Operations: Load.
 
@@ -266,9 +266,9 @@ Create an instance: `temporary_email = client.TemporaryEmail`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `email` | `String` |  |
-| `expiresAt` | `String` |  |
-| `token` | `String` |  |
+| `email` | `String` | Generated temporary email address |
+| `expiresAt` | `String` | Expiration timestamp of the temporary email |
+| `token` | `String` | Token for accessing the mailbox |
 
 #### Example: Load
 

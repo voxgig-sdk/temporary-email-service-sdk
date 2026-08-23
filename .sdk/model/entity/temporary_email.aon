@@ -8,16 +8,19 @@ main: kit: entity: temporary_email: {
     {
       name: "email"
       req: false
+      short: "Generated temporary email address"
       type: "`$STRING`"
     }
     {
       name: "expiresAt"
       req: false
+      short: "Expiration timestamp of the temporary email"
       type: "`$STRING`"
     }
     {
       name: "token"
       req: false
+      short: "Token for accessing the mailbox"
       type: "`$STRING`"
     }
   ]

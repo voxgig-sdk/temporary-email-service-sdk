@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "TemporaryEmailService",
+			"slug": "temporary-email-service",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -36,14 +39,17 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "email",
+						"short": "Generated temporary email address",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "expiresAt",
+						"short": "Expiration timestamp of the temporary email",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "token",
+						"short": "Token for accessing the mailbox",
 						"type": "`$STRING`",
 					},
 				},

@@ -249,9 +249,9 @@ On error, `ok` is `false` and `$err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `email` |  |
-| `expiresAt` |  |
-| `token` |  |
+| `email` | Generated temporary email address |
+| `expiresAt` | Expiration timestamp of the temporary email |
+| `token` | Token for accessing the mailbox |
 
 Operations: Load.
 
@@ -276,9 +276,9 @@ Create an instance: `$temporary_email = $client->TemporaryEmail();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `email` | `string` |  |
-| `expiresAt` | `string` |  |
-| `token` | `string` |  |
+| `email` | `string` | Generated temporary email address |
+| `expiresAt` | `string` | Expiration timestamp of the temporary email |
+| `token` | `string` | Token for accessing the mailbox |
 
 #### Example: Load
 

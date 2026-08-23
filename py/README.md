@@ -246,9 +246,9 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `email` |  |
-| `expiresAt` |  |
-| `token` |  |
+| `email` | Generated temporary email address |
+| `expiresAt` | Expiration timestamp of the temporary email |
+| `token` | Token for accessing the mailbox |
 
 Operations: Load.
 
@@ -273,9 +273,9 @@ Create an instance: `temporary_email = client.TemporaryEmail()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `email` | `str` |  |
-| `expiresAt` | `str` |  |
-| `token` | `str` |  |
+| `email` | `str` | Generated temporary email address |
+| `expiresAt` | `str` | Expiration timestamp of the temporary email |
+| `token` | `str` | Token for accessing the mailbox |
 
 #### Example: Load
 

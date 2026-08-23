@@ -93,9 +93,9 @@ $temporary_email = $client->TemporaryEmail();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `email` | `string` | No |  |
-| `expiresAt` | `string` | No |  |
-| `token` | `string` | No |  |
+| `email` | `string` | No | Generated temporary email address |
+| `expiresAt` | `string` | No | Expiration timestamp of the temporary email |
+| `token` | `string` | No | Token for accessing the mailbox |
 
 ### Operations
 

@@ -88,9 +88,9 @@ temporary_email = client.TemporaryEmail()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `email` | `str` | No |  |
-| `expiresAt` | `str` | No |  |
-| `token` | `str` | No |  |
+| `email` | `str` | No | Generated temporary email address |
+| `expiresAt` | `str` | No | Expiration timestamp of the temporary email |
+| `token` | `str` | No | Token for accessing the mailbox |
 
 ### Operations
 
