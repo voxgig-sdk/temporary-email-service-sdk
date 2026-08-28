@@ -22,7 +22,5 @@ class TemporaryEmail(TypedDict, total=False):
     token: str
 
 
-class TemporaryEmailLoadMatch(TypedDict, total=False):
-    email: str
-    expiresAt: str
-    token: str
+class TemporaryEmailLoadMatch(TypedDict):
+    apikey: str

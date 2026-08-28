@@ -12,9 +12,7 @@
 ---@field token? string
 
 ---@class TemporaryEmailLoadMatch
----@field email? string
----@field expiresAt? string
----@field token? string
+---@field apikey string
 
 local M = {}
 

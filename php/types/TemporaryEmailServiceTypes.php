@@ -23,8 +23,6 @@ class TemporaryEmail
 /** Request payload for TemporaryEmail#load. */
 class TemporaryEmailLoadMatch
 {
-    public ?string $email = null;
-    public ?string $expiresAt = null;
-    public ?string $token = null;
+    public string $apikey;
 }
 

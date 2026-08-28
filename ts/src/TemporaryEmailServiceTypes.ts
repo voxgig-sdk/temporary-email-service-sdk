@@ -12,8 +12,6 @@ export interface TemporaryEmail {
 }
 
 export interface TemporaryEmailLoadMatch {
-  email?: string
-  expiresAt?: string
-  token?: string
+  apikey: string
 }
 

@@ -21,9 +21,7 @@ type TemporaryEmail struct {
 
 // TemporaryEmailLoadMatch is the typed request payload for TemporaryEmail.LoadTyped.
 type TemporaryEmailLoadMatch struct {
-	Email *string `json:"email,omitempty"`
-	ExpiresAt *string `json:"expiresAt,omitempty"`
-	Token *string `json:"token,omitempty"`
+	Apikey string `json:"apikey"`
 }
 
 // asMap turns a typed request/data struct into the map[string]any the

@@ -27,18 +27,10 @@ TemporaryEmail = Struct.new(
 
 # Request payload for TemporaryEmail#load.
 #
-# @!attribute [rw] email
-#   @return [String, nil]
-#
-# @!attribute [rw] expiresAt
-#   @return [String, nil]
-#
-# @!attribute [rw] token
-#   @return [String, nil]
+# @!attribute [rw] apikey
+#   @return [String]
 TemporaryEmailLoadMatch = Struct.new(
-  :email,
-  :expiresAt,
-  :token,
+  :apikey,
   keyword_init: true
 )
 
